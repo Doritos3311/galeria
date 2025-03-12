@@ -1,0 +1,45 @@
+<div class="report-form">
+    <div class="titulo">
+        <h2>Información del Reporte</h2>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" class="content">
+        <div class="reportContainer">
+            <!-- Campo: ID del equipo -->
+            <div class="form-group">
+                <label for="equipmentId">ID del Equipo:</label>
+                <div class="equipmentId-container">
+                    <input placeholder="EQ-2025-001" id="equipmentId" [(ngModel)]="report.equipmentId" name="equipmentId"
+                        required type="number" />
+                </div>
+            </div>
+
+            <!-- Campo: Usuario -->
+            <div class="form-group">
+                <label for="user">Usuario:</label>
+                <input placeholder="Nombre del Registrador" id="user" [(ngModel)]="report.user" name="user" required />
+            </div>
+
+            <!-- Vista previa de la fotografía -->
+            <div class="form-group">
+                <label>Vista Previa:</label>
+                <div class="image-preview">
+                    <img [src]="report.imgUrl" alt="Vista previa de la fotografía" />
+                </div>
+            </div>
+
+            <!-- Campo: Descripción del problema -->
+            <div class="form-group">
+                <label for="description">Descripción del Estado:</label>
+                <textarea placeholder="Describe el estado o problema del equipo" id="description"
+                    [(ngModel)]="report.description" name="description" required></textarea>
+            </div>
+        </div>
+
+        <!-- Botones para guardar y cancelar -->
+        <div class="buttonContainer">
+            <button type="button" (click)="onCancel()">Cancelar</button> <!-- Botón de Cancelar -->
+            <button type="submit">Guardar Reporte</button>
+        </div>
+    </form>
+</div>

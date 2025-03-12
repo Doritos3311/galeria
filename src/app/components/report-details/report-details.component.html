@@ -1,0 +1,40 @@
+<div class="report-details">
+    <h2>Detalles del Reporte</h2>
+    
+    <div class="details-container">
+        <!-- Fotografía -->
+        <div class="detail">
+            <label>Fotografía:</label>
+            <img [src]="report.imgUrl" alt="Fotografía del reporte" />
+        </div>
+
+        <!-- ID del Equipo -->
+        <div class="detail">
+            <label>ID del Equipo:</label>
+            <span>{{ report.equipmentId }}</span>
+        </div>
+
+        <!-- Usuario -->
+        <div class="detail">
+            <label>Usuario:</label>
+            <span>{{ report.user }}</span>
+        </div>
+
+        <!-- Fecha y Hora -->
+        <div class="detail">
+            <label>Fecha y Hora:</label>
+            <span>{{ report.date }}</span>
+        </div>
+
+        <!-- Descripción -->
+        <div class="detail">
+            <label>Descripción:</label>
+            <span>{{ report.description }}</span>
+        </div>
+    </div>
+
+    <!-- Botón para volver -->
+    <div class="buttonContainer">
+        <button (click)="goBack()">Volver</button>
+    </div>
+</div>

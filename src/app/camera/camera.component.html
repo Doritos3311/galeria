@@ -1,0 +1,31 @@
+<div class="camera-container">
+    <!-- Mensaje de invitación cuando no hay imagen capturada -->
+    <div class="invitation-message" *ngIf="!imgUrl">
+        <span class="invitation-icon">📸</span>
+        <h2 class="invitation-title">¡Comienza tu inspección!</h2>
+        <p class="invitation-text">Toma una fotografía para generar un nuevo registro de inspección.</p>
+    </div>
+    
+    <!-- Formulario de reporte (aparece cuando hay una imagen) -->
+    <app-report-form *ngIf="showForm" [imgUrl]="imgUrl" (reportSaved)="onReportSaved($event)" (cancel)="onCancelForm()"></app-report-form>
+
+    <!-- Botones de acción (ocultos cuando el formulario está visible) -->
+    <div *ngIf="!showForm" class="button-container">
+        <!-- Botón para tomar foto -->
+        <button class="action-button take-picture-button" (click)="takePicture()" [disabled]="loading">
+            <span *ngIf="loading" class="loading-spinner">🔄</span>
+            <span *ngIf="!loading">Tomar Foto</span>
+        </button>
+
+        <!-- Botón para seleccionar imagen desde la galería -->
+        <label for="file-input" class="action-button gallery-button">
+            Seleccionar de Galería
+        </label>
+        <input id="file-input" type="file" accept="image/*" (change)="onFileSelected($event)" class="file-input" />
+    </div>
+
+    <!-- Mensaje de error -->
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+</div>

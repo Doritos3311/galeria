@@ -1,0 +1,50 @@
+<div class="report-list">
+  <h2>Lista de Reportes</h2>
+
+  <!-- Mensaje si no hay reportes -->
+  <div *ngIf="reports.length === 0" class="no-reports">
+    No hay reportes disponibles.
+  </div>
+
+  <!-- Contenedor de reportes -->
+  <div *ngIf="reports.length > 0" class="report-container">
+      <!-- Tarjeta de reporte -->
+      <div *ngFor="let report of reports" class="report-card">
+          <!-- Fotografía -->
+          <div class="report-photo">
+              <img [src]="report.imgUrl" alt="Fotografía del reporte" />
+          </div>
+
+          <!-- Información central (fecha, hora, ID, usuario, descripción) -->
+          <div class="report-info">
+              <!-- Encabezado -->
+              <div class="report-header">
+                  <div class="header-item">
+                      <label>Fecha y Hora:</label>
+                      <span>{{ report.date }}</span>
+                  </div>
+                  <div class="header-item">
+                      <label>ID del Equipo:</label>
+                      <span>{{ report.equipmentId }}</span>
+                  </div>
+                  <div class="header-item">
+                      <label>Usuario:</label>
+                      <span>{{ report.user }}</span>
+                  </div>
+              </div>
+
+              <!-- Descripción -->
+              <div class="report-description">
+                  <label>Descripción:</label>
+                  <p>{{ report.description }}</p>
+              </div>
+          </div>
+
+          <!-- Acciones (botones a la derecha) -->
+          <div class="report-actions">
+              <button (click)="viewDetails(report)">Ver Detalles</button>
+              <button (click)="deleteReport(report)">Eliminar</button>
+          </div>
+      </div>
+  </div>
+</div>

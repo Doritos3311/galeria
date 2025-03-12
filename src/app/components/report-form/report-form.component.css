@@ -1,0 +1,153 @@
+.report-form {
+  border-radius: 10px;
+  background-color: #0C0A09;
+  color: white;
+  max-width: 1200px; /* Más ancho para PC */
+  min-width: 600px;
+  border: 1px solid #1c1c1c;
+  margin: 2rem auto; /* Centrado en la pantalla */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.reportContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Más espacio entre elementos */
+  padding: 2rem;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.titulo {
+  background-color: #F7F7F7;
+  padding: 1.5rem; /* Más padding para el título */
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+  text-align: center;
+}
+
+.titulo h2 {
+  margin: 0;
+  font-size: 1.8em; /* Título más grande */
+  color: #111827;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Más espacio entre label y input */
+}
+
+.report-form label {
+  font-weight: bold;
+  color: #d8d8d8;
+  font-size: 1.1em; /* Labels más grandes */
+}
+
+.report-form input,
+.report-form textarea {
+  padding: 12px; /* Más padding para inputs */
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #0C0A09;
+  color: white;
+  width: 100%; /* Ocupa el 100% del ancho disponible */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.report-form textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  resize: none;
+  min-height: 150px; /* Textarea más alto */
+}
+
+.image-preview {
+  display: flex;
+  justify-content: center; /* Centra la imagen */
+}
+
+.image-preview img {
+  max-width: 100%; /* La imagen ocupa el 100% del contenedor */
+  max-height: 200px; /* Imagen más grande en PC */
+  border-radius: 5px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end; /* Botones alineados a la derecha */
+  gap: 10px; /* Espacio entre botones */
+  background-color: #1c1c1c;
+  padding: 1.5rem; /* Más padding para el contenedor del botón */
+  border-bottom-left-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+}
+
+.report-form button {
+  padding: 12px 24px; /* Botón más grande */
+  font-size: 1.1em; /* Texto más grande */
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.report-form button:hover {
+  background-color: #d8d8d8;
+  transform: translateY(-2px); /* Efecto hover */
+}
+
+/* Estilo específico para el botón de Cancelar */
+.report-form button[type="button"] {
+  background-color: #ff6b6b; /* Rojo para el botón de Cancelar */
+  color: white;
+}
+
+.report-form button[type="button"]:hover {
+  background-color: #ff5252; /* Rojo más claro al hacer hover */
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+  .report-form {
+      margin: 1rem auto; /* Menos margen en móviles */
+      min-width: 95%; /* Ocupa casi todo el ancho en móviles */
+  }
+
+  .reportContainer {
+      padding: 1rem; /* Menos padding en móviles */
+  }
+
+  .titulo h2 {
+      font-size: 1.5em; /* Título un poco más pequeño en móviles */
+  }
+
+  .report-form label {
+      font-size: 1em; /* Labels más pequeños en móviles */
+  }
+
+  .report-form input,
+  .report-form textarea {
+      padding: 10px; /* Menos padding en móviles */
+      font-size: 0.9em; /* Texto más pequeño en móviles */
+  }
+
+  .report-form textarea {
+      min-height: 120px; /* Textarea más bajo en móviles */
+  }
+
+  .image-preview img {
+      max-height: 150px; /* Imagen más pequeña en móviles */
+  }
+
+  .buttonContainer {
+      justify-content: center; /* Centrar el botón en móviles */
+      padding: 1rem; /* Menos padding en móviles */
+  }
+
+  .report-form button {
+      padding: 10px 20px; /* Botón más pequeño en móviles */
+      font-size: 1em; /* Texto más pequeño en móviles */
+  }
+}

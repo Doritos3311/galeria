@@ -1,0 +1,119 @@
+.camera-container {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #0F0F0F;
+    color: #ffffff;
+}
+
+.invitation-message {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.invitation-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+    display: block;
+    animation: pulse 1.5s infinite;
+}
+
+.invitation-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.invitation-text {
+    font-size: 16px;
+    color: #999;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.action-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.take-picture-button {
+    background-color: #ffffff;
+}
+
+.take-picture-button:hover {
+    background-color: #cccccc;
+    transform: translateY(-2px);
+}
+
+.gallery-button {
+    background-color: #333;
+    color: #ffffff;
+}
+
+.gallery-button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+.file-input {
+    display: none;
+}
+
+.error-message {
+    margin-top: 15px;
+    color: #ff6b6b;
+    background-color: rgba(255, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 3px solid #ff6b6b;
+    max-width: 300px;
+    text-align: center;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Media Queries para ajustes adicionales en pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .invitation-icon {
+        font-size: 40px; /* Tamaño más pequeño para pantallas muy pequeñas */
+    }
+
+    .invitation-title {
+        font-size: 18px; /* Tamaño más pequeño para pantallas muy pequeñas */
+    }
+
+    .invitation-text {
+        font-size: 12px; /* Tamaño más pequeño para pantallas muy pequeñas */
+    }
+
+    .action-button {
+        padding: 10px 15px; /* Padding más pequeño para pantallas muy pequeñas */
+        font-size: 12px; /* Tamaño de fuente más pequeño para pantallas muy pequeñas */
+    }
+}
