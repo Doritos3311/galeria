@@ -25,19 +25,21 @@ export class CameraService {
 
   async takePicture(): Promise<string> {
     await this.checkPermissions();
+
+    // Usar CameraSource.Camera para abrir la cámara directamente
     const image = await Camera.getPhoto({
       quality: 90,
       allowEditing: false,
       resultType: CameraResultType.Uri,
-      source: CameraSource.Photos
+      source: CameraSource.Camera // Cambia esto a CameraSource.Camera
     });
 
-    var imageUrl = image.webPath;
+    const imageUrl = image.webPath;
 
-    if (imageUrl != null) {
+    if (imageUrl) {
       return imageUrl;
     } else {
       throw new Error("Error al tomar la foto");
     }
-  };
+  }
 }
