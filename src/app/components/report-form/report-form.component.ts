@@ -35,7 +35,6 @@ export class ReportFormComponent {
   // Método que se ejecuta al enviar el formulario
   onSubmit() {
     this.report.equipmentId = `EQ-${new Date().getFullYear()}-${this.report.equipmentId}`; // Formatea el ID del equipo
-    this.reportService.addReport(this.report); // Guarda el reporte en el servicio
     this.reportSaved.emit(this.report); // Emite el reporte
     this.router.navigate(['/reportes']); // Redirige a la lista de reportes
   }

@@ -23,7 +23,8 @@ h2 {
 
 .report-container {
   width: 100%;
-  max-width: 1000px; /* Aumentamos el ancho máximo */
+  max-width: 1000px;
+  /* Aumentamos el ancho máximo */
 }
 
 .report-card {
@@ -36,7 +37,8 @@ h2 {
 }
 
 .report-photo {
-  flex: 0 0 300px; /* Ancho fijo para la foto */
+  flex: 0 0 300px;
+  /* Ancho fijo para la foto */
   margin-right: 20px;
 }
 
@@ -44,11 +46,13 @@ h2 {
   width: 100%;
   height: 150px;
   border-radius: 8px;
-  object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+  object-fit: cover;
+  /* Ajusta la imagen sin distorsionarla */
 }
 
 .report-info {
-  flex: 1; /* Ocupa el espacio restante */
+  flex: 1;
+  /* Ocupa el espacio restante */
   margin-right: 20px;
 }
 
@@ -71,12 +75,14 @@ h2 {
   font-weight: bold;
   display: block;
   margin-bottom: 5px;
-  color: #673ab7; /* Morado para los labels */
+  color: #673ab7;
+  /* Morado para los labels */
 }
 
 .header-item span {
   font-size: 14px;
-  color: #cccccc; /* Gris claro para el texto */
+  color: #cccccc;
+  /* Gris claro para el texto */
 }
 
 .report-description {
@@ -87,18 +93,21 @@ h2 {
   font-weight: bold;
   display: block;
   margin-bottom: 10px;
-  color: #673ab7; /* Morado para el label */
+  color: #673ab7;
+  /* Morado para el label */
 }
 
 .report-description p {
   font-size: 16px;
-  color: #ffffff; /* Texto blanco */
+  color: #ffffff;
+  /* Texto blanco */
   line-height: 1.6;
   margin: 0;
 }
 
 .report-actions {
-  flex: 0 0 120px; /* Ancho fijo para los botones */
+  flex: 0 0 120px;
+  /* Ancho fijo para los botones */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -108,7 +117,8 @@ h2 {
 .report-actions button {
   padding: 8px 16px;
   font-size: 14px;
-  background-color: #673ab7; /* Morado para los botones */
+  background-color: #673ab7;
+  /* Morado para los botones */
   color: white;
   border: none;
   border-radius: 5px;
@@ -117,15 +127,82 @@ h2 {
 }
 
 .report-actions button:hover {
-  background-color: #7e57c2; /* Morado más claro al hacer hover */
+  background-color: #7e57c2;
+  /* Morado más claro al hacer hover */
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .report-actions button:last-child {
-  background-color: #ff6b6b; /* Rojo para el botón de eliminar */
+  background-color: #ff6b6b;
+  /* Rojo para el botón de eliminar */
 }
 
 .report-actions button:last-child:hover {
-  background-color: #ff5252; /* Rojo más claro al hacer hover */
+  background-color: #ff5252;
+  /* Rojo más claro al hacer hover */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .report-card {
+    flex-direction: column;
+    /* Cambio a columna en pantallas pequeñas */
+    align-items: center;
+  }
+
+  .report-photo {
+    flex: 0 0 100%;
+    /* La foto ocupa todo el ancho */
+    margin-bottom: 20px;
+  }
+
+  .report-info {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .report-actions {
+    flex: 0 0 auto;
+    /* Los botones se ajustan al tamaño del contenido */
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .report-actions button {
+    width: 100%;
+    /* Los botones ocupan el ancho completo */
+  }
+
+  .header-item {
+    flex: 1;
+    margin-right: 0;
+  }
+
+  h2 {
+    font-size: 20px;
+    /* Reducir tamaño de fuente en pantallas pequeñas */
+  }
+
+  .report-description p {
+    font-size: 14px;
+    /* Reducir tamaño de fuente de la descripción */
+  }
+
+  .no-reports {
+    font-size: 14px;
+    /* Reducir tamaño de fuente */
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 18px;
+    /* Aún más pequeño en pantallas muy pequeñas */
+  }
+
+  .report-description p {
+    font-size: 12px;
+    /* Reducir aún más el tamaño del texto */
+  }
 }
